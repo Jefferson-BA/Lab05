@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="lab05.Views.ReporteView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:lab05.ViewModels"
+             Height="450" Width="800">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <Label Content="Fecha Inicio:" />
+            <DatePicker SelectedDate="{Binding FechaInicio}" Width="120" Margin="5,0"/>
+
+            <Label Content="Fecha Fin:" />
+            <DatePicker SelectedDate="{Binding FechaFin}" Width="120" Margin="5,0"/>
+
+            <Button Content="Generar Reporte" Command="{Binding GenerarCommand}" Width="120" Margin="10,0"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Reportes}" AutoGenerateColumns="True" IsReadOnly="True" />
+    </Grid>
+</UserControl>

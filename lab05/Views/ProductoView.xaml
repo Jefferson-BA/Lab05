@@ -1,12 +1,8 @@
-﻿<Window x:Class="lab05.Views.ProductoView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="clr-namespace:lab05.ViewModels"
-        Title="Mantenimiento de Productos (CRUD Completo)" Height="550" Width="950">
-
-    <Window.DataContext>
-        <vm:ProductoViewModel />
-    </Window.DataContext>
+﻿<UserControl x:Class="lab05.Views.ProductoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:lab05.ViewModels"
+             Height="550" Width="950">
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
@@ -84,4 +80,4 @@
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
-</Window>
+</UserControl>

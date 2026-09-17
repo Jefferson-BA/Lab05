@@ -2,9 +2,9 @@
 
 namespace lab05.Views
 {
-    public partial class ProductoView : UserControl
+    public partial class PedidoView : UserControl
     {
-        public ProductoView()
+        public PedidoView()
         {
             InitializeComponent();
         }

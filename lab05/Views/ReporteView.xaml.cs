@@ -2,9 +2,9 @@
 
 namespace lab05.Views
 {
-    public partial class ProductoView : UserControl
+    public partial class ReporteView : UserControl
     {
-        public ProductoView()
+        public ReporteView()
         {
             InitializeComponent();
         }

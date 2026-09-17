@@ -24,6 +24,7 @@ namespace lab05.ViewModels
 
         public ICommand BuscarCommand { get; }
         public ICommand InsertarCommand { get; }
+        public ICommand ActualizarCommand { get; } // <-- Comando Agregado
         public ICommand EliminarCommand { get; }
 
         public ProveedorViewModel()
@@ -31,6 +32,7 @@ namespace lab05.ViewModels
             _repo = new ProveedorRepository();
             BuscarCommand = new RelayCommand(_ => Buscar());
             InsertarCommand = new RelayCommand(_ => Insertar());
+            ActualizarCommand = new RelayCommand(_ => Actualizar()); // <-- Inicialización Agregada
             EliminarCommand = new RelayCommand(_ => Eliminar(), _ => ProveedorID > 0);
             Buscar();
         }
@@ -44,6 +46,19 @@ namespace lab05.ViewModels
         private void Insertar()
         {
             _repo.Insertar(new Proveedor { CompaniaNombre = CompaniaNombre, NombreContacto = NombreContacto, Ciudad = Ciudad });
+            Buscar();
+        }
+
+        // <-- Método Agregado
+        private void Actualizar()
+        {
+            _repo.Actualizar(new Proveedor
+            {
+                ProveedorID = ProveedorID,
+                CompaniaNombre = CompaniaNombre,
+                NombreContacto = NombreContacto,
+                Ciudad = Ciudad
+            });
             Buscar();
         }
 

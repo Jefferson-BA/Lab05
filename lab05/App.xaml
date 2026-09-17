@@ -1,7 +1,26 @@
 ﻿<Application x:Class="lab05.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="Views/ProductoView.xaml">
+             xmlns:views="clr-namespace:lab05.Views"
+             xmlns:vms="clr-namespace:lab05.ViewModels"
+             StartupUri="Views/DashboardView.xaml">
+
     <Application.Resources>
+        <!-- Rutas: Relaciona cada ViewModel con su Vista (UserControl) -->
+        <DataTemplate DataType="{x:Type vms:ProductoViewModel}">
+            <views:ProductoView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vms:ProveedorViewModel}">
+            <views:ProveedorView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vms:ReporteViewModel}">
+            <views:ReporteView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vms:CategoriaViewModel}">
+            <views:CategoriaView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vms:PedidoViewModel}">
+            <views:PedidoView />
+        </DataTemplate>
     </Application.Resources>
 </Application>
